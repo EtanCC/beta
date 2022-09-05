@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz Beta</title>
+    <meta name="description" content="Oficina Cooee" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <link href="assets/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        function e(e) {
+          return (
+            e.stopPropagation
+              ? e.stopPropagation()
+              : window.event && (window.event.cancelBubble = !0),
+            e.preventDefault(),
+            !1
+          );
+        }
+        document.addEventListener(
+          "contextmenu",
+          function (e) {
+            e.preventDefault();
+          },
+          !1
+        ),
+          document.addEventListener(
+            "keydown",
+            function (t) {
+              t.ctrlKey && t.shiftKey && 73 == t.keyCode && e(t),
+                t.ctrlKey && t.shiftKey && 74 == t.keyCode && e(t),
+                83 == t.keyCode &&
+                  (navigator.platform.match("Mac") ? t.metaKey : t.ctrlKey) &&
+                  e(t),
+                t.ctrlKey && 85 == t.keyCode && e(t),
+                123 == event.keyCode && e(t);
+            },
+            !1
+          );
+      };
+    </script>
+    <div id="resposta"></div>
+    <form class="form" onsubmit="ativarapi(event, this);">
+      <div class="row">
+        <div class="group">
+          <select name="api">
+            <option id="api" name="api" disabled selected>
+              --- Select your quiz
+            </option>
+            <option id="api" name="api" value="17581741">Quiz ➜ 1</option>
+            <option id="api" name="api" value="17581004">Quiz ➜ 2</option>
+            <option id="api" name="api" value="19492365">Quiz ➜ 3</option>
+            <option id="api" name="api" value="17580888">Quiz ➜ 4</option>
+            <option id="api" name="api" value="17580867">Quiz ➜ 5</option>
+            <option id="api" name="api" value="17580839">Quiz ➜ 6</option>
+            <option id="api" name="api" value="17580815">Quiz ➜ 7</option>
+            <option id="api" name="api" value="19256283">Quiz ➜ 8</option>
+            <option id="api" name="api" value="17586145">Quiz ➜ 9</option>
+            <option id="api" name="api" value="17581978">Quiz ➜ 10</option>
+            <option id="api" name="api" value="17581517">Quiz ➜ 11</option>
+            <option id="api" name="api" value="17581489">Quiz ➜ 12</option>
+            <option id="api" name="api" value="17580879">Quiz ➜ 13</option>
+            <option id="api" name="api" value="17580833">Quiz ➜ 14</option>
+            <option id="api" name="api" value="17580827">Quiz ➜ 15</option>
+            <option id="api" name="api" value="17580817">Quiz ➜ 16</option>
+            <option id="api" name="api" value="17580813">Quiz ➜ 17</option>
+            <option id="api" name="api" value="17580808">Quiz ➜ 18</option>
+            <option id="api" name="api" value="17580544">Quiz ➜ 19</option>
+          </select>
+        </div>
+      </div>
+      <br />
+      <div class="row has-alignCenter">
+        <button class="form__button" type="submit" onclick="ativar()" id="cl">
+          ATIVAR
+        </button>
+      </div>
+    </form>
+
+    <script src="assets/js/axios.min.js" type="text/javascript"></script>
+    <script src="assets/js/index.js" type="text/javascript"></script>
+  </body>
+</html>
